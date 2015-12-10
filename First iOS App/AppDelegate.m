@@ -23,12 +23,21 @@
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
     
+    // The window
     CGRect viewRect = [[UIScreen mainScreen] bounds];
     self.window = [[UIWindow alloc] initWithFrame:viewRect];
     
+    // The view controller
     UIViewController *colorTouchVC = [[UIViewController alloc] init];
-    self.window.rootViewController = colorTouchVC;
     
+    // The view
+    UIView *colorView = [[UIView alloc] initWithFrame:viewRect];
+    // Set the backgound color of the view
+    colorView.backgroundColor = [UIColor blueColor];
+    
+    colorTouchVC.view = colorView;
+
+    self.window.rootViewController = colorTouchVC;
     [self.window makeKeyAndVisible];
     NSLog(@"The screen is %f wide and %f tall", viewRect.size.width, viewRect.size.height);
     
