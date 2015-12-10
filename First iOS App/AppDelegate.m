@@ -22,7 +22,14 @@
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
-    NSLog(@"Hello World");
+    
+    UIScreen *screen = [UIScreen mainScreen];
+    CGRect viewRect = [screen bounds];
+    
+    NSLog(@"The screen is %f wide and %f tall", viewRect.size.width, viewRect.size.height);
+    
+    NSLog(@"Hello World, %@", self);
+    
     return YES;
 }
 
