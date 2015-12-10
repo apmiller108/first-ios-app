@@ -23,8 +23,7 @@
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
     
-    UIScreen *screen = [UIScreen mainScreen];
-    CGRect viewRect = [screen bounds];
+    CGRect viewRect = [[UIScreen mainScreen] bounds];
     
     NSLog(@"The screen is %f wide and %f tall", viewRect.size.width, viewRect.size.height);
     
