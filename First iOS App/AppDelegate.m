@@ -24,7 +24,12 @@
     splitViewController.delegate = self;
     
     CGRect viewRect = [[UIScreen mainScreen] bounds];
+    self.window = [[UIWindow alloc] initWithFrame:viewRect];
     
+    UIViewController *colorTouchVC = [[UIViewController alloc] init];
+    self.window.rootViewController = colorTouchVC;
+    
+    [self.window makeKeyAndVisible];
     NSLog(@"The screen is %f wide and %f tall", viewRect.size.width, viewRect.size.height);
     
     NSLog(@"Hello World, %@", self);
